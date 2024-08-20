@@ -16,4 +16,5 @@ PostgreSQL: База данных, хранящая данные о сокращ
 Для развртывания приложения должны быть установлены minikube, kubectl, helm и плагин secrets для helm.
 
 Запуск:
+
 ` helm secrets install service-release ./service -f ./secrets.yml `
