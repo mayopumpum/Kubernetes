@@ -1,0 +1,1 @@
+The application {{ .Release.Name }} {{ .Chart.Version }} has been installed successfully

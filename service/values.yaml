@@ -1,0 +1,37 @@
+app:
+  name: short-app
+  replicas: 1
+  components: frontend
+  image: antonlarichev/short-app
+  version: v1.4
+  port: 80
+  limits:
+    memory: "128Mi"
+    cpu: "100m"
+
+api:
+  name: short-api
+  replicas: 1
+  components: backend
+  image: antonlarichev/short-api
+  version: v1.0
+  port: 3000
+  limits:
+    memory: "500Mi"
+    cpu: "200m"
+  envs:
+    - DATABASE_URL
+
+postgres:
+  name: postgres
+  components: postgres
+  image: postgres
+  version: 16-alpine
+  port: 5432
+  limits:
+    memory: "500Mi"
+    cpu: "300m"
+  envs:
+    - POSTGRES_DB
+    - POSTGRES_USER
+    - POSTGRES_PASSWORD
